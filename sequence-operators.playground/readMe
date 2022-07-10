@@ -1,0 +1,16 @@
+## Key points
+- Publishers are actually sequences, as they produce values much like collections and sequences do.
+- You can use min and max to emit the minimum or maximum value emitted by a publisher, respectively.
+- first, last and output(at:) are useful when you want to find a value emitted at a specific index. Use output(in:) to find values emitted within a range of indices.
+- first(where:) and last(where:) each take a predicate to determine which values it should let through.
+- Operators such as count, contains and allSatisfy don’t emit values emitted by the publisher. Rather, they emit a different value based on the emitted values.
+- contains(where:) takes a predicate to determine if the publisher contains the given value.
+- Use reduce to accumulate emitted values into a single value.
+
+note: 
+scan and reduce have the same functionality, with the main difference being that scan emits the accumulated value for every emitted value, while reduce emits a single accumulated value once the upstream publisher sends a .finished completion event.
+
+```
+min(), max(), first(), last(), output(at, in), count(), contains(), allSatisfy, reduce
+
+```
